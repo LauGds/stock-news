@@ -4,11 +4,11 @@ from twilio.rest import Client
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 OWN_Endpoint = "https://www.alphavantage.co/query"
-api_key_tesla = "<API-KEY-TESLA>"
+api_key_tesla = "<<API-KEY-TESLA>>"
 OWN_Endpoint_news = "https://newsapi.org/v2/everything"
-api_key_news = "<API-KEY-NEWS>"
-account_sid = "<ACCOUNT SID>"
-auth_token = "<AUTH-TOKEN>"
+api_key_news = "<<API-KEY-NEWS>>"
+account_sid = "<<ACCOUNT SID>>"
+auth_token = "<<AUTH-TOKEN>>"
 
 parameters = {
     "function": "TIME_SERIES_DAILY_ADJUSTED",
@@ -42,8 +42,8 @@ if difference >= 5:
         message = client.messages \
             .create(
                 body=f"\n{STOCK}: 🔺{difference}%\nHeadline: {each_news['title']}. \nBrief: {news_description}",
-                from_="<SENDER PHONE NUMBER>",
-                to="<RECIPIENT PHONE NUMBER>"
+                from_="<<SENDER PHONE NUMBER>>",
+                to="<<RECIPIENT PHONE NUMBER>>"
             )
         print(message.status)
 else:
@@ -53,7 +53,7 @@ else:
         message = client.messages \
             .create(
                 body=f"{STOCK}: 🔻{difference}%\nHeadline: {each_news['title']}. \nBrief: {news_description}",
-                from_="<SENDER PHONE NUMBER>",
-                to="<RECIPIENT PHONE NUMBER>"
+                from_="<<SENDER PHONE NUMBER>>",
+                to="<<RECIPIENT PHONE NUMBER>>"
             )
         print(message.status)
